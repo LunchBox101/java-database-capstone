@@ -1,5 +1,9 @@
 package com.project.back_end.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
@@ -23,10 +27,19 @@ public class Prescription {
   private String medication;
 
   @NotNull
+  @Size(min = 1, max = 50)
   private String dosage;
 
-  @Size(max = 200)
+  @Size(max = 500)
   private String doctorNotes;
+
+  @Min(value = 0, message = "Refill count cannot be negative")
+  @Max(value = 12, message = "Refill count cannot exceed 12")
+  @JsonProperty("refillCount")
+  private int refillCount;
+
+  @Size(max = 150, message = "Pharmacy name must not exceed 150 characters")
+  private String pharmacyName;
 
   public Prescription() {}
 
@@ -55,4 +68,10 @@ public class Prescription {
 
   public String getDoctorNotes() { return doctorNotes; }
   public void setDoctorNotes(String doctorNotes) { this.doctorNotes = doctorNotes; }
+
+  public int getRefillCount() { return refillCount; }
+  public void setRefillCount(int refillCount) { this.refillCount = refillCount; }
+
+  public String getPharmacyName() { return pharmacyName; }
+  public void setPharmacyName(String pharmacyName) { this.pharmacyName = pharmacyName; }
 }
