@@ -22,6 +22,8 @@ public class Admin {
     @NotNull(message = "Password cannot be null")
     private String password;
 
+    public Admin() {}
+
     public Admin(Long id, String username, String password) {
         this.id = id;
         this.username = username;
