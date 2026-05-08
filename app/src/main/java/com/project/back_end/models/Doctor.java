@@ -51,7 +51,7 @@ public class Doctor {
 
     @Min(value = 0, message = "Years of experience cannot be negative")
     @Max(value = 60, message = "Years of experience cannot exceed 60")
-    private int yearsOfExperience;
+    private Integer yearsOfExperience;
 
     @Size(max = 255, message = "Clinic address must not exceed 255 characters")
     private String clinicAddress;
@@ -82,8 +82,8 @@ public class Doctor {
     public List<String> getAvailableTime() { return availableTime; }
     public void setAvailableTime(List<String> availableTime) { this.availableTime = availableTime; }
 
-    public int getYearsOfExperience() { return yearsOfExperience; }
-    public void setYearsOfExperience(int yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
+    public Integer getYearsOfExperience() { return yearsOfExperience; }
+    public void setYearsOfExperience(Integer yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
 
     public String getClinicAddress() { return clinicAddress; }
     public void setClinicAddress(String clinicAddress) { this.clinicAddress = clinicAddress; }

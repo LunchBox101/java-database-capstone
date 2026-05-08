@@ -1,5 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Select Role</title>
+        <link rel="icon" href="./assets/images/logo/Logo.png" />
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="./js/util.js" defer></script>
+        <script src="./js/render.js" defer></script>
+        <script src="./js/components/header.js" defer></script>
+        <script src="./js/components/footer.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrapper">
+                <div id="header"></div>
+                <main class="main-content">
+                    <input type="text" id="searchBar"/>
+
+                    <div class="filter-section">
+                        <button id="todayBtn">Today's Appointments</button>
+                        <input type="date" id="datePicker"/>
+                    </div>
+
+                    <table id="patientTable">
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Prescription</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patientTableBody">
+                            <!-- populated dynamically -->
+                        </tbody>
+                    </table>
+                </main>
+                <div id="footer"></div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <span id="closeModal" class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+
+        <script type="module" src="./js/services/index.js" defer></script>
+    </body>
+</html>
 <!-- index.html -->
 <!-- 
+<@DOCTYPE html>
 
 Step-by-Step Explanation of `index.html`.
 This file allows users to select a role (Admin, Patient, Doctor) 
